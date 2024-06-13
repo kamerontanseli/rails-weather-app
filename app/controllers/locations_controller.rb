@@ -21,6 +21,9 @@ class LocationsController < ApplicationController
 
   def show
     @location = current_user.locations.where("lower(city) = ?", params[:city]).first
+    if not @location
+      redirect_to "/"
+    end
     @locations = current_user.locations.where("lower(city) != ?", params[:city])
   end
 
