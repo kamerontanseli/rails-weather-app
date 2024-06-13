@@ -1,0 +1,44 @@
+<% if featured %>
+  <div
+    class="weather-header"
+    data-controller="weather"
+    data-weather-api-value="<%= weather_api_location_path(:city => featured.city.downcase) %>"
+  >
+    <h1 class="weather-header__emoji" data-weather-target="icon">☁️</h1>
+    <p class="weather-header__temp" data-weather-target="temp">--℃</p>
+    <h2 class="weather-header__title"><%= featured.city %></h2>
+  </div>
+<% end %>
+
+<% if locations %>
+<div class="weather-table">
+  <% locations.each do |loc| %>
+  <div
+    class="weather-table__row"
+    data-controller="weather"
+    data-weather-api-value="<%= weather_api_location_path(:city => loc.city.downcase) %>"
+  >
+    <a
+      class="weather-table__row-city"
+      href="/locations/<%= loc.city.downcase %>"
+      ><%= loc.city %></a
+    >
+    <span class="weather-table__row-icon">
+      <span data-weather-target="icon"></span><span> </span>
+      <span data-weather-target="temp"></span>
+    </span>
+    <% if signed_in? %>
+    <span class="weather-table__row-action">
+      <%= button_to 'ⓧ', loc, :method => :delete %>
+    </span>
+    <% end %>
+  </div>
+  <% end %>
+  <% if signed_in? %>
+  <div class="weather-table__row-new">
+    <a href="<%= new_location_path %>">&plus;</a>
+  </div>
+  <% end %>
+</div>
+<% end %>
+

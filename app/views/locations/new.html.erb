@@ -1,0 +1,20 @@
+<div class="weather-modal">
+  <div class="weather-modal__head">
+    <span class="weather-modal__title">Add a new city</span>
+    <a href="/" class="weather-modal__close">&times;</a>
+  </div>
+  <div class="weather-modal__body">
+    <% @location.errors.full_messages.each do |message| %>
+      <p class="weather-model__error"><%= message %></p>
+    <% end %>
+    <%= form_with model: @location, data: { 'controller' => "new-city" } do |f| %>
+      <%= f.select :city, options_for_select(
+          @cities.map{ |c| [c["name"], c["name"], {'data-latitude'=>c["latitude"], 'data-longitude'=>c["longitude"]}] }
+      ), {}, data: { 'new-city-target' => "select", 'action' => "input->new-city#updateLatLong" } %>
+      <%= f.hidden_field :latitude, data: { 'new-city-target' => "latitude" } %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :longitude, data: { 'new-city-target' => "longitude" } %>
+      <button type="submit">Save city</button>
+    <% end %>
+  </div>
+</div>

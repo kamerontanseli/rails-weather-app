@@ -1,0 +1,29 @@
+<%= form_with model: location do |form| %>
+  <div>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+  </div><br/>
+  <% location.errors.full_messages_for(:city).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+
+  <div>
+    <%= form.label :latitude %><br>
+    <%= form.text_field :latitude %>
+  </div><br/>
+  <% location.errors.full_messages_for(:latitude).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <div>
+    <%= form.label :longitude %><br>
+    <%= form.text_field :longitude %>
+  </div>
+  <% location.errors.full_messages_for(:longitude).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <div><br/>
+    <%= form.submit %>
+  </div>
+<% end %>
