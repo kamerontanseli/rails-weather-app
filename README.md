@@ -1,24 +1,3 @@
-# README
+# Weather app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![localhost_3000_ (2)](https://github.com/kamerontanseli/rails-weather-app/assets/8687515/95094f9a-eae5-40ca-8511-68848525d670)
