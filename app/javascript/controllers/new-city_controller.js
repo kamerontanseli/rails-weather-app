@@ -53,7 +53,7 @@ export default class extends Controller {
           .sort((a, b) => b.pop - a.pop)
           .map(
             (c) => `
-        <li data-lat="${c.lat}" data-lon="${c.lon}" data-city="${c.name}" data-action="click->new-city#selectedCity"><span>${c.name}, ${c.admin1}</span></li>
+        <li data-lat="${c.lat}" data-lon="${c.lon}" data-city="${c.name}" data-action="click->new-city#selectedCity"><span>${c.name}, ${c.country}</span></li>
       `
           )
           .join("")
