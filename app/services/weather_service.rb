@@ -8,7 +8,7 @@ class WeatherService
     return JSON.parse(json_data)
   end
   def self.fetch_weather(latitude, longitude)
-    url = "https://api.open-meteo.com/v1/forecast?latitude=#{latitude}&longitude=#{longitude}&current=temperature_2m"
+    url = "https://api.open-meteo.com/v1/forecast?latitude=#{latitude}&longitude=#{longitude}&current=temperature_2m,weather_code&hourly=temperature_2m"
     response = HTTParty.get(url)
     response.parsed_response
   rescue StandardError => e

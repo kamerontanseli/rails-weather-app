@@ -39,23 +39,27 @@ main {
   color: #434300;
 }
 
-.sign-in, .sign-up {
+.sign-in,
+.sign-up {
   padding: 16px;
   border-radius: 4px;
   background-color: #fff;
 }
 
-.sign-in h2, .sign-up h2 {
+.sign-in h2,
+.sign-up h2 {
   margin-top: 0;
   color: #333;
 }
 
-.sign-in label, .sign-up label {
+.sign-in label,
+.sign-up label {
   display: block;
   margin-bottom: 4px;
 }
 
-.sign-in input, .sign-up input {
+.sign-in input,
+.sign-up input {
   display: block;
   width: 100%;
   padding: 12px;
@@ -70,7 +74,8 @@ main {
   color: #333;
 }
 
-.sign-in .other-links, .sign-up .other-links {
+.sign-in .other-links,
+.sign-up .other-links {
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -81,7 +86,8 @@ main {
   font-size: 0.8em;
 }
 
-.sign-in > form > div, .sign-up > form > div {
+.sign-in > form > div,
+.sign-up > form > div {
   margin-bottom: 16px;
 }
 
@@ -205,10 +211,6 @@ main {
   background-color: #fcfcfc;
   border-radius: 4px;
   border: 1px solid #46a5d3;
-  position: fixed;
-  top: calc(50% - 200px);
-  left: 16px;
-  width: calc(100% - 32px);
 }
 
 .weather-modal__head {
@@ -245,7 +247,7 @@ main {
   color: #5a0000;
 }
 
-.weather-modal__body select {
+.weather-modal__body input {
   display: block;
   width: 100%;
   margin-bottom: 16px;
@@ -256,6 +258,20 @@ main {
   border: 1px solid #cdcdcd;
   border-radius: 4px;
   font-size: 1.2em;
+}
+
+.weather-modal__list {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.weather-modal__list li {
+  padding: 8px;
+  cursor: pointer;
+  background-color: #eee;
+  margin-bottom: 8px;
 }
 
 .weather-modal__body button {

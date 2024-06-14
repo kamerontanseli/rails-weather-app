@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   with_options(except: [:show]) do |opt|
     opt.resources :locations
   end
-  get "/locations/:city", to: "locations#show"
+  get "/locations/:city", to: "locations#show", as: "locations_show"
   get "/locations/:city/weather", to: "locations#weather", as: "weather_api_location"
+  get "/cities", to: "locations#cities", as: "cities_api_location"
   
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

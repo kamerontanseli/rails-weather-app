@@ -3,7 +3,7 @@
     <%= form.label :city %><br>
     <%= form.text_field :city %>
   </div><br/>
-  <% location.errors.full_messages_for(:city).each do |message| %>
+    <% location.errors.full_messages_for(:city).each do |message| %>
         <div><%= message %></div>
     <% end %>
 
