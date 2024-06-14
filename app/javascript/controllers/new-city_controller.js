@@ -53,7 +53,7 @@ export default class extends Controller {
           .sort((a, b) => b.pop - a.pop)
           .map(
             (c) => `
-        <li data-lat="${c.lat}" data-lon="${c.lon}" data-city="${c.name}, ${c.admin1}" data-action="click->new-city#selectedCity"><span>${c.name}, ${c.admin1}</span></li>
+        <li data-lat="${c.lat}" data-lon="${c.lon}" data-city="${c.name}" data-action="click->new-city#selectedCity"><span>${c.name}, ${c.admin1}</span></li>
       `
           )
           .join("")
@@ -64,7 +64,7 @@ export default class extends Controller {
   }
   selectedCity(event) {
     const target = event.currentTarget;
-    this.searchTarget.value = target.getAttribute('data-city')
+    this.searchTarget.value = target.querySelector('span').textContent
     this.cityTarget.value = target.getAttribute('data-city')
     this.listTarget.innerHTML = ''
     const data = {
