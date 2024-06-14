@@ -1,0 +1,12 @@
+<div class="weather-settings">
+  <%= form_with model: @setting do |form| %>
+  <div class="weather-settings__field">
+    <%= form.label :theme %>
+    <%= form.select :theme, [["Sky", "sky"], ["Sunset", "sunset"], ["Night", "night"]], selected: @setting.theme %>
+  </div>
+  
+  <div class="weather-settings__button">
+    <button type="submit">Save settings</button>
+  </div>
+  <% end %>
+</div>

@@ -22,9 +22,20 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%) no-repeat;
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+body.theme-sky {
+  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%) no-repeat;
+}
+
+body.theme-sunset {
+  background: linear-gradient(to bottom, #163C52 0%, #4F4F47 30%, #C5752D 60%, #B7490F 80%, #2F1107 100%) no-repeat;
+}
+
+body.theme-night {
+  background: linear-gradient(to bottom, #20202c 0%,#515175 100%) no-repeat;
 }
 
 main {
@@ -92,29 +103,39 @@ main {
 }
 
 .weather-profile {
+  display: flex;
+  justify-content: space-between;
   padding: 16px;
+  align-items: center;
   margin-bottom: 32px;
-  text-align: right;
 }
 
-.weather-profile span {
-  font-size: 0.8em;
-  margin-bottom: 8px;
-  color: #fff;
-  display: block;
+.weather-profile__avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff6;
+  border-radius: 999px;
+  color: #000;
+  text-decoration: none;
 }
 
-.weather-profile button {
-  appearance: none;
+.weather-profile__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weather-profile__menu button, .weather-profile__menu a {
   border: 0;
+  font-size: 0.8em;
+  text-decoration: none;
   background-color: transparent;
   color: #fff;
   cursor: pointer;
-}
-
-.weather-profile a {
-  text-decoration: none;
-  color: #fff;
+  font-weight: 600;
 }
 
 .weather-header {
@@ -281,6 +302,40 @@ main {
   border-radius: 4px;
   border: 1px solid #cdcdcd;
   font-size: 1em;
+  cursor: pointer;
   font-weight: 700;
   color: #333;
 }
+
+
+.weather-settings__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.weather-settings__field label {
+  font-weight: 600;
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.weather-settings__field select {
+  padding: 12px;
+  border: 0;
+  appearance: none;
+  position: relative;
+}
+
+.weather-settings button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #cdcdcd;
+  font-size: 0.8em;
+  cursor: pointer;
+  font-weight: 700;
+  color: #333;
+} 

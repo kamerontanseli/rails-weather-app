@@ -10,7 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="theme-<%= @setting ? @setting.theme : 'sky' %>">
     <div id="flash">
       <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
@@ -19,10 +19,15 @@
 
     <header class="weather-profile">
       <% if signed_in? %>
-        <span><%= current_user.email %></span>
-        <%= button_to 'Sign out', sign_out_path, method: :delete %>
+        <a href="/settings" class="weather-profile__avatar">🧔‍♂️</a>
+        <div class="weather-profile__menu">
+          <%= button_to 'Sign out', sign_out_path, method: :delete %>
+        </div>
       <% else %>
-        <%= link_to 'Sign in', sign_in_path %>
+        <div class="weather-profile__avatar weather-profile__avatar--hide">🧔‍♂️</div>
+        <div class="weather-profile__menu">
+          <%= link_to 'Sign in', sign_in_path %>
+        </div>
       <% end %>
     </header>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_13_175322) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_14_201819) do
   create_table "locations", force: :cascade do |t|
     t.string "city"
     t.float "latitude"
@@ -19,6 +19,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_13_175322) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_locations_on_user_id"
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "theme", default: "day", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_settings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,4 +41,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_13_175322) do
     t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
   end
 
+  add_foreign_key "settings", "users"
 end
