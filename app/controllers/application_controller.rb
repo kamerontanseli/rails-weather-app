@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
 
   def get_or_create_settings
     if current_user
-      @setting = current_user.settings.first
+      @setting = current_user.setting
       if not @setting
-        @setting = current_user.settings.create(user_id: current_user.id)
+        @setting = current_user.setting.create(user_id: current_user.id)
       end
       return @setting
     end
